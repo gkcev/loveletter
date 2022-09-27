@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .zarfCon{
+            position: relative;
+            width: 600px;
+            height: 300px;
+            background-color: #9ef2dc;
+            border: 2px solid #87A2FB;
+            box-shadow: 10px 10px 10px rgba(0,0,0,0.1);
+        }
+        .egikdiv{
+            position: relative;
+            background-color: #87A2FB;
+            clip-path: polygon(0 0, 50% 50%, 0 100%);
+            width: 300px;
+            height: 600px;
+            transform: rotate(90deg) translate(-150px,-150px);
+            margin:0px;
+        }
+        .egikdivsag{
+            background-color: #dbaddd;
+            clip-path: polygon(0 0, 50% 50%, 0 100%);
+            width:600px;
+            height: 300px;
+            transform: rotate(180deg) translate(0px,600px);
+        }
+        .egikdivsol{
+            background-color: #2b9a7c;
+            clip-path: polygon(0 0, 50% 50%, 0 100%);
+            width:600px;
+            height: 300px;
+            transform: rotate(360deg) translate(0px,-900px);
+        }
+        .egikdivalt{
+            position:absolute;
+            background-color: #7664d0;
+            clip-path: polygon(0 0, 50% 50%, 0 100%);
+            width: 300px;
+            height: 600px;
+            transform: rotate(270deg) translate(1350px,150px);
+        }      
+        .mektup{
+            position:absolute;
+            width: 600px;
+            height: 300px;
+            background-color: #EEEEEE;
+            z-index: -1;
+            top:0px;
+        }
+        .zarfCon:hover{
+            z-index: -200;
+        }
+        .zarfCon:hover  .mektup{
+            transition: all 1s;
+            transform: translateY(-100px);
+        }
+        .zarfCon:hover .egikdiv{
+            transform: rotate(270deg) translateX(450px) translateY(150px);
+            z-index: -100;
+        }
+
+
+    </style>
+</head>
+<body>
+        <div class="zarfCon">
+            <div class="egikdiv"></div>
+            <div class="egikdivsag"></div>
+            <div class="egikdivsol"></div>
+            <div class="egikdivalt"></div>
+            <div class="mektup">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint repudiandae quibusdam, sed hic sapiente ipsa, consequuntur placeat natus ullam, nihil ex. Debitis mollitia corporis, nesciunt beatae aliquid quisquam nobis! Commodi?</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus officiis sed eius quas amet necessitatibus voluptatibus, dolorum beatae soluta veritatis maxime nemo temporibus harum et, eum, repudiandae id sequi cum!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit corporis, placeat laborum vero repudiandae id voluptate esse enim natus in maxime quo fugiat magnam. Totam, nisi tempore. Accusantium, sint aperiam.</p>
+            </div>
+        </div>
+
+</body>
+</html>
